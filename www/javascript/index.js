@@ -2,6 +2,17 @@
 var windowLoaded = false;
 var appDataLoaded = false;
 
+function onDeviceReady() {
+}
+
+function successHandler() {
+//	console.log("success");
+}
+
+function errorHandler() {
+//	console.log("success");
+}
+
 //window.onload = init;
 
 $(window).load(function() { init(); });
@@ -25,6 +36,9 @@ function continueInit(i) {
 	document.getElementById("description").innerHTML = editor.description;
 	document.getElementById("post").innerHTML = editor.post;
 	$("#editor").html("Stahlhandske");
+//	jQuery( window ).on( "swipe", function( event ) {
+//		$("#editor").html("zipe");								   
+//	});
 }
 
 
@@ -41,3 +55,6 @@ function loadScript(){
     document.getElementsByTagName("head")[0].appendChild(script);
 }
 
+/* <script type="text/javascript" src="http://mobcomics.com/zines/angry/config.js">
+ </script>
+ */

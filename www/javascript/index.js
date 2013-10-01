@@ -1,10 +1,51 @@
 // JavaScript Document
+var windowLoaded = false;
+var appDataLoaded = false;
 
-window.onload = init;
+function successHandler() {
+//	console.log("success");
+}
+
+function errorHandler() {
+//	console.log("success");
+}
+
+//window.onload = init;
+
+$(window).load(function() { init(); });
 
 function init() {
-//	document.getElementById("description").innerHTML = editor.description;
-//	document.getElementById("post").innerHTML = editor.post;
-//	alert(comics.comicsList[0].comicDataUrl);	
-	}
-	
+	console.log("init");
+	if(!window.console){ window.console = {log: function(){} }; } 	
+	$.mobile.loading( 'show', {
+		text: 'loading',
+		textVisible: false,
+		theme: 'a',
+		html: ""
+	});
+	windowLoaded = true;
+	if (appDataLoaded) continueInit(1);
+}
+
+function continueInit(i) {
+	console.log(i);
+	$.mobile.loading( 'hide');
+	document.getElementById("description").innerHTML = editor.description;
+	document.getElementById("post").innerHTML = editor.post;
+	$("#editor").html("Stahlhandske");
+}
+
+
+function loadScript(){
+	if(!window.console){ window.console = {log: function(){} }; } 
+    var script = document.createElement("script")
+    script.type = "text/javascript";
+    script.onload = function(){
+		console.log("loadScript");
+		appDataLoaded = true;
+		if (windowLoaded) continueInit(2);
+    };
+    script.src = "http://mobcomics.com/zines/angry/config.js?"+$.now();
+    document.getElementsByTagName("head")[0].appendChild(script);
+}
+

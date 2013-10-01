@@ -2,14 +2,6 @@
 var windowLoaded = false;
 var appDataLoaded = false;
 
-function successHandler() {
-//	console.log("success");
-}
-
-function errorHandler() {
-//	console.log("success");
-}
-
 //window.onload = init;
 
 $(window).load(function() { init(); });

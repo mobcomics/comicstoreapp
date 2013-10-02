@@ -57,5 +57,6 @@
 	<access origin="http://www.bluemooncomics.com" subdomains="true" />	
 	<access origin="http://comixology.com" subdomains="true" />	
 	<access origin="http://comicretailer.com" subdomains="true" />	
+	<access origin="http://cdngc.net" subdomains="true" />	
 	
 </widget>

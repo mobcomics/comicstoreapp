@@ -32,3 +32,9 @@
     transform-origin: top left;
     border: solid #ccc 0px;
 }
+
+.iframeStyle2 {
+	scrolling: "yes";
+	height: 100%;
+	width: 100%;
+}
